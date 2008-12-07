@@ -1,0 +1,3 @@
+alter table urlboard change Direct_Attach ATTACH_TYPE int(8) NOT NULL default 1;
+
+ alter ignore table `meshprototype2`.`urlinfo` add unique `uniqueurl` (`URL_ADDRESS`, `USER_ID`);

@@ -1,0 +1,3 @@
+ mysqlimport -p --fields-terminated-by='|' --lines-terminated-by='^@' meshprototype2 /space/semanticprofilestore.txt;
+
+mysqldump -p -u root --tab='/var/www/html/uploaded/' --fields-terminated-by='|' --lines-terminated-by='^@' meshprototype2 semanticprofilestore;

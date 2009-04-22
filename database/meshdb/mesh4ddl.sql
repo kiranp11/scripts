@@ -665,6 +665,12 @@ CREATE TABLE `dailydigest` (
 PRIMARY KEY  (`DailyDigest_ID`)                                                                             
  ); 
  
+ CREATE TABLE `common_words` (                          
+               `seq_id` int(8) NOT NULL auto_increment,            
+               `word` char(128) NOT NULL,                          
+               PRIMARY KEY  (`seq_id`),                            
+               UNIQUE KEY `NewIndex1` (`word`)                      
+             ) ;
  
  CREATE TRIGGER url_profile_trigger BEFORE UPDATE ON `meshprototype2`.`urlinfo`  FOR EACH ROW UPDATE `meshprototype2`.`semanticprofilestore` SET date_last_modified = NOW() WHERE semantic_profile_owner_id = OLD.url_id AND owner_type = (SELECT owner_type_id FROM semanticprofileownertypes WHERE OWNER_TYPE = 'URL');
 
